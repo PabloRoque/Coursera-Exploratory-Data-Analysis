@@ -19,3 +19,8 @@ baltMotorTotal <- aggregate(baltMotor$Emissions, list(baltMotor$year), sum)
 names(baltMotorTotal) <- c("year", "Emissions")
 # Plotting
 with(baltMotorTotal, plot(year, Emissions, main = "Motor-related emissions in Baltimore"))
+
+# Export to png device
+png('plot5.png', width = 480, height = 480, units = "px")
+with(baltMotorTotal, plot(year, Emissions, main = "Motor-related emissions in Baltimore"))
+dev.off()

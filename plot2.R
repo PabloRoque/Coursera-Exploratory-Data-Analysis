@@ -9,3 +9,8 @@ baltTotalEm <- aggregate(NEI$Emissions[NEI$fips == "24510"],
                          list(NEI$year[NEI$fips == "24510"]), sum)
 names(baltTotalEm) <- c("year", "Emissions")
 with(baltTotalEm, plot(year, Emissions, main = "Total emissions in Baltimore"))
+
+# Export to png device
+png('plot2.png', width = 480, height = 480, units = "px")
+with(baltTotalEm, plot(year, Emissions, main = "Total emissions in Baltimore"))
+dev.off()

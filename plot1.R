@@ -10,3 +10,8 @@ names(totEm) <- c("year", "Emissions")
 
 # Plotting using base
 with(totEm, plot(year, Emissions, main = "Total emissions"))
+
+# Export to png device
+png('plot1.png', width = 480, height = 480, units = "px")
+with(totEm, plot(year, Emissions, main = "Total emissions"))
+dev.off()

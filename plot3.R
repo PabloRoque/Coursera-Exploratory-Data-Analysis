@@ -12,3 +12,10 @@ names(baltTypeEm) <- c("year", "type", "Emissions")
 with(baltTypeEm, qplot(year, Emissions, col = type, 
                        geom = c("point", "path"), size=I(2),
                        main = "Total Emissions in Baltimore per type"))
+
+# Export to png device
+png('plot3.png', width = 480, height = 480, units = "px")
+with(baltTypeEm, qplot(year, Emissions, col = type, 
+                       geom = c("point", "path"), size=I(2),
+                       main = "Total Emissions in Baltimore per type"))
+dev.off()

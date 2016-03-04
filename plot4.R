@@ -16,6 +16,10 @@ coalEm <- aggregate(coalNEI$Emissions, list(coalNEI$year), sum)
 names(coalEm) <- c("year", "Coal_Emissions")
 
 # Plotting using base
-with(coalEm, plot(year, Coal_Emissions, main = "Totla coal-related emissions"))
+with(coalEm, plot(year, Coal_Emissions, main = "Total coal-related emissions"))
 
+# Export to png device
+png('plot4.png', width = 480, height = 480, units = "px")
+with(coalEm, plot(year, Coal_Emissions, main = "Total coal-related emissions"))
+dev.off()
 

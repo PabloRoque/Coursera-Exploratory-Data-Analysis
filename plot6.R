@@ -23,3 +23,10 @@ library(ggplot2)
 with(comparMotorTotal, qplot(year, Emissions, col = fips, 
                        geom = c("point", "path"), size=I(2),
                        main = "Baltimore vs LA County motor-emissions"))
+
+# Export to png device
+png('plot6.png', width = 480, height = 480, units = "px")
+with(comparMotorTotal, qplot(year, Emissions, col = fips, 
+                             geom = c("point", "path"), size=I(2),
+                             main = "Baltimore vs LA County motor-emissions"))
+dev.off()
